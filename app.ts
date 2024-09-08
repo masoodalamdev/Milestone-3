@@ -1,4 +1,3 @@
-// Function to generate the resume based on form input
 const generateResume = () => {
     const name = (document.getElementById('name') as HTMLInputElement).value;
     const email = (document.getElementById('email') as HTMLInputElement).value;
@@ -9,7 +8,6 @@ const generateResume = () => {
 
     if(name != "" && email != "" && phone != "" && education != "" &&workExperience != "" && skills != ""){
 
-        // Update the resume sections with the form data
         (document.getElementById('resume-name') as HTMLHeadingElement).textContent = name;
         (document.getElementById('resume-email') as HTMLParagraphElement).textContent = `Email: ${email}`;
         (document.getElementById('resume-phone') as HTMLParagraphElement).textContent = `Phone: ${phone}`;
@@ -17,7 +15,6 @@ const generateResume = () => {
         (document.getElementById('resume-work-experience') as HTMLParagraphElement).textContent = workExperience;
         (document.getElementById('resume-skills') as HTMLParagraphElement).textContent = skills;
         
-        // Show the resume section and hide the form
         document.getElementById('resume')?.classList.remove('hidden');
         document.getElementById('resume-form')?.classList.add('hidden');
     }else{
@@ -25,7 +22,6 @@ const generateResume = () => {
     }
 };
 
-// Add event listener to the button
 const button = document.getElementById('generate-resume');
 if (button) {
     button.addEventListener('click', generateResume);
